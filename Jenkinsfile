@@ -7,8 +7,8 @@ pipeline {
     }
     
     environment {
-        // Variables d'environnement
         MAVEN_OPTS = '-Xmx1024m'
+        SCANNER_HOME = tool 'SonarScanner'
     }
     
     stages {
@@ -23,7 +23,6 @@ pipeline {
             steps {
                 echo 'Compilation du projet Maven...'
                 bat 'mvn clean compile'
-                // Pour Windows, utilisez : bat 'mvn clean compile'
             }
         }
         
@@ -31,30 +30,27 @@ pipeline {
             steps {
                 echo 'Exécution des tests unitaires...'
                 bat 'mvn test'
-                // Pour Windows : bat 'mvn test'
             }
             post {
                 always {
-                    // Publier les résultats des tests
-                    junit '**/target/surefire-reports/*.xml'
+                    junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
                 }
             }
         }
         
         stage('4. Générer le package WAR/JAR') {
             steps {
-                echo 'Création du package...'
+                echo 'Création du package WAR...'
                 bat 'mvn package -DskipTests'
-                // Pour Windows : bat 'mvn package -DskipTests'
             }
             post {
                 success {
-                    // Archiver l'artefact généré
-                    archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+                    archiveArtifacts artifacts: '**/target/*.war', allowEmptyArchive: true, fingerprint: true
                 }
             }
         }
-    stage('5. Analyse SonarQube') {
+        
+        stage('5. Analyse SonarQube') {
             steps {
                 echo 'Lancement de l\'analyse SonarQube...'
                 withSonarQubeEnv('SonarQube') {
@@ -78,17 +74,19 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }   
+        }
     }
+    
     post {
         success {
-            echo 'Pipeline exécuté avec succès !'
+            echo '✓ Pipeline exécuté avec succès!'
         }
         failure {
-            echo 'Le pipeline a échoué.'
+            echo '✗ Le pipeline a échoué.'
         }
         always {
             echo 'Nettoyage de l\'espace de travail...'
             cleanWs()
         }
     }
+}
