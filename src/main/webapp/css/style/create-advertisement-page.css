@@ -1,0 +1,24 @@
+#advertisementCreation {
+    width: 360px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    color: #808080;
+    padding-left: 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.buttonSection {
+    text-align: center;
+}
+
+main {
+    padding-bottom: 15%;
+    margin-top: 5%;
+}

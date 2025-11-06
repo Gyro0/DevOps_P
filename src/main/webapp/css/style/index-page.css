@@ -1,0 +1,126 @@
+/*
+Author: Vittorio Esposito
+Author: Gabriele Del Fiume
+Version: 1.0
+Since: 1.0
+ */
+
+#slideshow {
+    max-width: 100%;
+}
+
+#slideshow img{
+    width:100%;
+}
+
+#titles h1 {
+    padding-top: 0.5em !important;
+}
+
+.searchbar {
+    text-align: center;
+    position: relative;
+    width: 70%;
+    height : 50%;
+    margin-left: auto;
+    margin-right: auto ;
+}
+
+#searchAdv select,input {
+    width: 20% !important;
+    min-width: 180px !important;;
+    display: inline !important;
+    margin: 10px 5px 10px 5px !important;
+}
+
+#searchAdv button {
+    width: 20% !important;
+    min-width: 200px !important;;
+    display: block !important;
+    margin: auto !important;
+}
+
+@media screen and (max-width: 1024px) {
+    #searchAdv select,input {
+        display: block !important;;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/*
+#searchAdv > * {
+    margin: 0px 10px 10px 10px;
+}*/
+
+.titleAdvList {
+    font-weight: bold;
+}
+
+.advertisement {
+    width: 70%;
+    margin: auto;
+    height: auto;
+    position: relative;
+    left:0;
+    right:0;
+}
+
+.advertisement:hover {
+    background-color: #f5f5f5;
+    color:#000000;
+}
+
+.advSmallImage {
+
+    /* horizontal alignment inside the container*/
+    float: left;
+    padding: 10px 0px 10px 0;
+}
+
+.advSmallImage > img {
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+}
+
+.advSummary {
+    clear: left !important;
+    padding-left: 20px !important;
+    width: 70% !important;
+    display: inline-block !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    /*line-height: 18px !important;*/
+    font-weight: 400 !important;
+    color: #333 !important;
+    /*font-size: 17px !important;*/
+}
+
+.advSummary > h3 {
+    /*font-size: 25px !important;*/
+    text-decoration: none !important;
+    vertical-align: top !important;
+    word-break: break-word !important;
+    color: #003B95 !important;
+    font-weight: bold !important;
+    /*line-height: 28px !important;*/
+}
+
+@media screen and (max-width: 1024px) {
+    .advertisement {
+        width: 100% !important;
+    }
+    .advSmallImage {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .advSmallImage img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .advSummary {
+        width: 90% !important;
+        padding-left: 0px;
+    }
+}

@@ -1,0 +1,45 @@
+.rowImg{
+    display: flex;
+    justify-content: center;
+}
+
+#mainPanel{
+    width: 600px;
+    padding: 3%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+#previews{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.preview {
+    flex:1;
+    background: #ddd;
+    max-width: 120px;
+    height: 90px;
+    display: block;
+    margin: 3%;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    margin-top: 5%;
+}
