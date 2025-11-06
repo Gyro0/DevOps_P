@@ -56,7 +56,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube') {
                     bat """
                         mvn sonar:sonar ^
-                        -Dsonar.projectKey=yourwaytoitaly ^
+                        -Dsonar.projectKey=YourWayToItaly ^
                         -Dsonar.projectName=YourWayToItaly ^
                         -Dsonar.host.url=http://localhost:9000 ^
                         -Dsonar.sources=src/main/java ^
