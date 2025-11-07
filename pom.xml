@@ -52,6 +52,18 @@
     <!-- Specifies the encoding to be used for project source files -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- SonarQube Properties -->
+        <sonar.projectKey>YourWayToItaly</sonar.projectKey>
+        <sonar.projectName>YourWayToItaly</sonar.projectName>
+        <sonar.projectVersion>1.0</sonar.projectVersion>
+        <sonar.sources>src/main/java</sonar.sources>
+        <sonar.tests>src/test/java</sonar.tests>
+        <sonar.java.binaries>target/classes</sonar.java.binaries>
+        <sonar.java.test.binaries>target/test-classes</sonar.java.test.binaries>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+        <sonar.exclusions>**/webapp/**,**/resources/**,**/*.xml</sonar.exclusions>
+        <sonar.java.source>17</sonar.java.source>
+        <sonar.java.target>17</sonar.java.target>
     </properties>
 
 
