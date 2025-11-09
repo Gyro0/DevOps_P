@@ -2,13 +2,13 @@ pipeline {
     agent any
     
     tools {
-        maven 'mvn'
-        jdk 'java'
+        maven 'Maven-3.9.11'
+        jdk 'JDK-17'
     }
     
     environment {
         MAVEN_OPTS = '-Xmx1024m'
-        //SCANNER_HOME = tool 'SonarScanner'
+        SCANNER_HOME = tool 'SonarScanner'
     }
     
     stages {
@@ -22,14 +22,14 @@ pipeline {
         stage('2. Compiler le projet') {
             steps {
                 echo 'Compilation du projet Maven...'
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         
         stage('3. Lancer les tests unitaires') {
             steps {
                 echo 'Exécution des tests unitaires...'
-                sh 'mvn test'
+                bat 'mvn test'
             }
             post {
                 always {
@@ -41,7 +41,7 @@ pipeline {
         stage('4. Générer le package WAR/JAR') {
             steps {
                 echo 'Création du package WAR...'
-                sh 'mvn package -DskipTests'
+                bat 'mvn package -DskipTests'
             }
             post {
                 success {
@@ -50,11 +50,11 @@ pipeline {
             }
         }
         
-        /*stage('5. Analyse SonarQube') {
+        stage('5. Analyse SonarQube') {
             steps {
                 echo 'Lancement de l\'analyse SonarQube...'
                 withSonarQubeEnv('SonarQube') {
-                    sh 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
             }
         }
@@ -66,7 +66,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }*/
+        }
     }
     
     post {

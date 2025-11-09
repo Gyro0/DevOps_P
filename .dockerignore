@@ -1,0 +1,18 @@
+# Fichiers inutiles pour l'image Docker
+.git
+.gitignore
+.idea
+.vscode
+*.md
+README.md
+Jenkinsfile
+javadoc/
+src/
+target/classes/
+target/maven-status/
+target/generated-sources/
+target/test-classes/
+target/surefire-reports/
+lib/
+test.txt
+hw1-score.txt

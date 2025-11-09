@@ -39,7 +39,14 @@ function getTypeAdvList(elementId, placeholder) {
     if (storageList===null || !storageList.includes("option")) {
     // The list is not in the storage
     let url = contextPath + "/typeAdv";
-    $.getJSON(url, function (res) {
+    $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json",
+        headers: {
+            "Accept": "application/json"
+        },
+        success: function(res) {
     let typeAdvList = res.resourceList;
     if (typeAdvList.length>0) {
         head = "<option value=\"\" disabled selected>" + placeholder + "</option>\n";
@@ -59,6 +66,7 @@ function getTypeAdvList(elementId, placeholder) {
     }
     // Display the list
     container.innerHTML = head + str;
+        }
     });
 
     } else {
@@ -82,7 +90,14 @@ function getCityList(elementId, placeholder) {
     if (storageList===null || !storageList.includes("option")) {
         // The list is not in the storage
         let url = contextPath + "/cities";
-        $.getJSON(url, function (res) {
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            headers: {
+                "Accept": "application/json"
+            },
+            success: function(res) {
             let cityList = res.resourceList;
             if (cityList.length>0) {
                 head = "<option value=\"\" disabled selected>" + placeholder + "</option>\n";
@@ -102,6 +117,7 @@ function getCityList(elementId, placeholder) {
             }
             // Display the list
             container.innerHTML = head + str;
+            }
         });
 
     } else {

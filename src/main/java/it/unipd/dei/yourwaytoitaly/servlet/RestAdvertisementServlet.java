@@ -1,13 +1,14 @@
 package it.unipd.dei.yourwaytoitaly.servlet;
 
-import it.unipd.dei.yourwaytoitaly.resource.Message;
-import it.unipd.dei.yourwaytoitaly.rest.AdvertisementRestResource;
-import it.unipd.dei.yourwaytoitaly.utils.ErrorCode;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import it.unipd.dei.yourwaytoitaly.resource.Message;
+import it.unipd.dei.yourwaytoitaly.rest.AdvertisementRestResource;
+import it.unipd.dei.yourwaytoitaly.utils.ErrorCode;
 
 /**
  * Manages the REST API for Advertisements
@@ -96,7 +97,7 @@ public final class RestAdvertisementServlet extends AbstractDatabaseServlet {
             return false;
         }
 
-        if(!accept.contains(JSON_MEDIA_TYPE) && !accept.equals(ALL_MEDIA_TYPE)) {
+        if(!accept.contains(JSON_MEDIA_TYPE) && !accept.contains(ALL_MEDIA_TYPE)) {
             ErrorCode ec = ErrorCode.OPERATION_UNKNOWN;
             m = new Message(ec.getErrorMessage(), ec.getErrorCode(),
                     String.format("Unsupported output media type. Resources are represented only in application/json. " +
