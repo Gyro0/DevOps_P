@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         MAVEN_OPTS = '-Xmx1024m'
-        SCANNER_HOME = tool 'SonarScanner'
+        //SCANNER_HOME = tool 'SonarScanner'
     }
     
     stages {
