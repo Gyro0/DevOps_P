@@ -22,14 +22,24 @@ pipeline {
         stage('2. Compiler le projet') {
             steps {
                 echo 'Compilation du projet Maven...'
-                sh 'mvn clean compile'
+                if (isUnix()){
+                    sh 'mvn clean compile'
+                } 
+                else{
+                    bat 'mvn clean compile'
+                }
             }
         }
         
         stage('3. Lancer les tests unitaires') {
             steps {
                 echo 'Exécution des tests unitaires...'
-                sh 'mvn test'
+                if (isUnix()){
+                    sh 'mvn test'
+                } 
+                else{
+                    bat 'mvn test'
+                }
             }
             post {
                 always {
@@ -41,7 +51,12 @@ pipeline {
         stage('4. Générer le package WAR/JAR') {
             steps {
                 echo 'Création du package WAR...'
-                sh 'mvn package -DskipTests'
+                if (isUnix()){
+                    sh 'mvn package -DskipTests'
+                }
+                else{
+                    bat 'mvn package -DskipTests'
+                } 
             }
             post {
                 success {
