@@ -29,7 +29,7 @@
           driverClassName="org.postgresql.Driver"
           url="jdbc:postgresql://localhost:5433/yourwaytoitaly"
           username="ywti"
-          password="ywti_password"
+          password="ywti"
           maxTotal="20"
           maxIdle="10"
           maxWaitMillis="-1"/>
