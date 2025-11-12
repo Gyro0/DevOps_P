@@ -100,7 +100,7 @@ public class AdvertisementDAO extends AbstractDAO{
         final String STATEMENT_EDIT =
                 "UPDATE ADVERTISEMENT SET price = ? , score = ? , num_tot_item = ? , " +
                         "title = ? , description = ? , date_end = ? , date_start = ? , " +
-                        "time_start = ? , time_end = ?" +
+                        "time_start = ? , time_end = ? " +
                         "WHERE ID_advertisement = ? RETURNING *;";
         Connection con = DataSourceProvider.getDataSource().getConnection();
         PreparedStatement pstmt = null;
