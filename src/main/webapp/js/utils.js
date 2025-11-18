@@ -9,7 +9,7 @@ JS to provide utilities
 
 
 // Context path
-const contextPath = "http://localhost:8080";
+const contextPath = window.location.origin;
 
 document.addEventListener("DOMContentLoaded", function(event) {
     // Load navbar and footer
