@@ -27,9 +27,9 @@
     <Resource name="jdbc/YWTI"
           type="javax.sql.DataSource"
           driverClassName="org.postgresql.Driver"
-          url="jdbc:postgresql://localhost:5433/yourwaytoitaly"
-          username="ywti"
-          password="ywti"
+          url="jdbc:postgresql://localhost:5432/yourwaytoitaly"
+          username="postgres"
+          password="postgres"
           maxTotal="20"
           maxIdle="10"
           maxWaitMillis="-1"/>

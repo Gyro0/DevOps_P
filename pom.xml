@@ -16,20 +16,16 @@
     <inceptionYear>2021</inceptionYear>
     <developers>
         <developer>
-            <id>ve</id>
-            <name>Vittorio Esposito</name>
+            <id>sa</id>
+            <name>Soufiane AIT LHADJ</name>
         </developer>
         <developer>
-            <id>mb</id>
-            <name>Marco Basso</name>
+            <id>aa</id>
+            <name>Anir Achibane</name>
         </developer>
         <developer>
-            <id>mp</id>
-            <name>Matteo Piva</name>
-        </developer>
-        <developer>
-            <id>fg</id>
-            <name>Francesco Giurisato</name>
+            <id>ao</id>
+            <name>Abderrahim Oussayh</name>
         </developer>
     </developers>
 
